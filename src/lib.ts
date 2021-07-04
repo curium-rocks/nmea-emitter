@@ -1,0 +1,1 @@
+export { NmeaEmitter} from './nmeaEmitter';
