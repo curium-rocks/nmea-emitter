@@ -1,5 +1,5 @@
 {
-  "name": "nmea-emitter",
+  "name": "@curium.rocks/nmea-emitter",
   "version": "0.1.0",
   "description": "A IDataEmitter implementation that takes NMEA sentences and emits processed objects",
   "main": "build/src/lib.js",
@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "@curium.rocks/data-emitter-base": "^0.1.1-alpha.10",
-    "@curium.rocks/serial-emitter": "^0.1.1-alpha.1",
+    "@curium.rocks/serial-emitter": "^0.1.1-alpha.3",
     "nmea-simple": "^3.2.0"
   },
   "devDependencies": {

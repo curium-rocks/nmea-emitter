@@ -5,7 +5,9 @@ import SerialPort from 'serialport';
 import * as TypeMoq from "typemoq";
 import {GGAPacket} from 'nmea-simple';
 import {NmeaEmitter} from '../src/nmeaEmitter';
-import { SerialEmitterFactory } from '@curium.rocks/serial-emitter';
+import { NmeaEmitterFactory } from '../src/nmeaEmitterFactory';
+
+const factory = new NmeaEmitterFactory();
 
 const mockSerialPort = TypeMoq.Mock.ofType<SerialPort>();
 const mockTransform = TypeMoq.Mock.ofType<Transform>(SerialPort.parsers.Readline);
@@ -15,7 +17,8 @@ interface Callback {
     (chunk: string): void
 }
 
-SerialEmitterFactory.setProvider((() => Promise.resolve(mockSerialPort.target)))
+
+factory.setProvider((() => Promise.resolve(mockSerialPort.target)))
 
 describe( 'NmeaEmitter', function() {
     describe( 'onData', function() {
