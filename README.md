@@ -1,5 +1,5 @@
 # NMEA-Emitter
-[![Security Rating](https://sonarqube.curium.rocks/api/project_badges/measure?project=nmea-emitter&metric=security_rating)](https://sonarqube.curium.rocks/dashboard?id=nmea-emitter) [![Coverage](https://sonarqube.curium.rocks/api/project_badges/measure?project=nmea-emitter&metric=coverage)](https://sonarqube.curium.rocks/dashboard?id=nmea-emitter) [![Quality Gate Status](https://sonarqube.curium.rocks/api/project_badges/measure?project=nmea-emitter&metric=alert_status)](https://sonarqube.curium.rocks/dashboard?id=nmea-emitter)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=curium-rocks_nmea-emitter&metric=security_rating)](https://sonarcloud.io/dashboard?id=curium-rocks_nmea-emitter) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=curium-rocks_nmea-emitter&metric=coverage)](https://sonarcloud.io/dashboard?id=curium-rocks_nmea-emitter) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=curium-rocks_nmea-emitter&metric=alert_status)](https://sonarcloud.io/dashboard?id=curium-rocks_nmea-emitter)
 ## How To Install
 `npm install --save @curium.rocks/nmea-emitter`
 ## Example(s)
