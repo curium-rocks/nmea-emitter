@@ -19,4 +19,12 @@ export class NmeaEmitter extends SerialEmitter {
         }
         throw new Error("invalid data type " + typeof data + " for NMEA parsing");
     }
+
+    /**
+     * Get the emitter type
+     * @return {string}
+     */
+    public getType(): string {
+        return "NmeaEmitter";
+    }
 }
