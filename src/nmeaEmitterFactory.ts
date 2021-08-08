@@ -19,7 +19,7 @@ export class NmeaEmitterFactory extends SerialEmitterFactory {
         return this.provider(settings).then((sp)=>{
             return(new NmeaEmitter(
                 sp, 
-                this.getTransform(settings.format), id, name, desc));
+                this.getTransform(settings.format), id, name, desc, settings));
         })
     }
 }

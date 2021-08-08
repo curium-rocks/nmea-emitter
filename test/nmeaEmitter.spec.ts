@@ -6,6 +6,7 @@ import * as TypeMoq from "typemoq";
 import {GGAPacket} from 'nmea-simple';
 import {NmeaEmitter} from '../src/nmeaEmitter';
 import { NmeaEmitterFactory } from '../src/nmeaEmitterFactory';
+import { SerialDataFormat, SerialParity, SerialPortSettings } from '@curium.rocks/serial-emitter';
 
 const factory = new NmeaEmitterFactory();
 
@@ -20,6 +21,15 @@ interface Callback {
 
 factory.setProvider((() => Promise.resolve(mockSerialPort.target)))
 
+const settings : SerialPortSettings = {
+    portName: 'test',
+    baudRate: 9600,
+    dataBits: 8,
+    parity: SerialParity.NONE,
+    stopBits: 2,
+    format: SerialDataFormat.ASCII_LINES
+}
+
 describe( 'NmeaEmitter', function() {
     describe( 'onData', function() {
         it( 'Should provide packetized nmea sentences', function(done) {
@@ -29,7 +39,7 @@ describe( 'NmeaEmitter', function() {
                 dataCallback = func as Callback;
             });
 
-            const emitter = new NmeaEmitter(mockSerialPort.object, mockTransform.object, 'test', 'test', 'test');
+            const emitter = new NmeaEmitter(mockSerialPort.object, mockTransform.object, 'test', 'test', 'test', settings);
             emitter.onData((dataEvt) => {
                 const ggaPacket:GGAPacket = dataEvt.data as GGAPacket;
                 expect(ggaPacket.latitude).to.be.eq(37.39109795066667);
