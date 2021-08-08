@@ -6,7 +6,7 @@ import {parseNmeaSentence} from 'nmea-simple';
  * Extends {SerialEmitter} and expects to receive NMEA 0183 sentences
  */
 export class NmeaEmitter extends SerialEmitter {
-    
+    static TYPE: "NMEA-EMITTER";
     /**
      * Builds a NMEA packet if the data is a string, expects complete nmea sentences from 
      * the onData event from the serial emitter 
@@ -25,6 +25,6 @@ export class NmeaEmitter extends SerialEmitter {
      * @return {string}
      */
     public getType(): string {
-        return "NmeaEmitter";
+        return NmeaEmitter.TYPE;
     }
 }
